@@ -2,6 +2,7 @@ dtu/ws/fastmoney/AccountInfo.class
 dtu/ws/fastmoney/CreateAccountWithBalance.class
 dtu/ws/fastmoney/RetireAccountResponse.class
 dtu/ws/fastmoney/Transaction.class
+org/acme/CreateUser.class
 dtu/ws/fastmoney/CreateAccountWithBalanceResponse.class
 dtu/ws/fastmoney/GetAccountsResponse.class
 dtu/ws/fastmoney/BankServiceService.class
