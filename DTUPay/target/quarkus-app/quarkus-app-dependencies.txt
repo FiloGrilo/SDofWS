@@ -1,5 +1,5 @@
 com.aayushatharva.brotli4j:brotli4j::jar:1.8.0
-com.aayushatharva.brotli4j:native-linux-x86_64::jar:1.8.0
+com.aayushatharva.brotli4j:native-osx-x86_64::jar:1.8.0
 com.fasterxml.jackson.core:jackson-core::jar:2.14.1
 com.ibm.async:asyncutil::jar:0.1.0
 com.sun.activation:jakarta.activation::jar:1.2.1
