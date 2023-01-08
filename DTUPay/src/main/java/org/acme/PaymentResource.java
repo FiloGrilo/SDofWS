@@ -10,6 +10,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 @Path("/payments")
 public class PaymentResource {
@@ -27,11 +28,26 @@ public class PaymentResource {
         return pService.getPaymentList();
     }
 
+    @GET
+    @Path("/getBalance/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getBalanceJson(@PathParam String id) { return pService.getBalance(id); }
+
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public boolean postPaymentJSON(Payment p) {
         return pService.addPayment(p);
     }
+
+    @POST
+    @Path("/transfer")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response transferMoneyJson(Transfer data) {
+        return pService.transferMoney(data);
+    }
+
+
 
     @POST
     @Consumes(MediaType.APPLICATION_XML)
@@ -45,6 +61,13 @@ public class PaymentResource {
     public Response registerUserXML(CreateUser data) {
         return pService.registerUser(data);
     }
+    @POST
+    @Path("/deleteAccount")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response deleteAccountJson(String id) {
+        return pService.deleteAccount(id);
+    }
+
 
 }
 
