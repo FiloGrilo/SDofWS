@@ -63,12 +63,10 @@ public class BankServiceService
     }
 
     /**
-     * 
-     * @return
-     *     returns BankService
+     * @return returns BankService
      */
     @WebEndpoint(name = "BankServicePort")
-    public BankService getBankServicePort() {
+    public dtu.ws.fastmoney.BankService getBankServicePort() {
         return super.getPort(new QName("http://fastmoney.ws.dtu/", "BankServicePort"), BankService.class);
     }
 

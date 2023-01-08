@@ -48,7 +48,6 @@ public class PaymentResource {
     }
 
 
-
     @POST
     @Consumes(MediaType.APPLICATION_XML)
     public boolean postPaymentXML(Payment p) {
@@ -57,8 +56,8 @@ public class PaymentResource {
 
     @POST
     @Path("/registerUser")
-    @Consumes(MediaType.APPLICATION_XML)
-    public Response registerUserXML(CreateUser data) {
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response registerUserJson(CreateUser data) {
         return pService.registerUser(data);
     }
     @POST
