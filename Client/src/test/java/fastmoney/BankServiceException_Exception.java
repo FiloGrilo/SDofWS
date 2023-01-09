@@ -1,5 +1,5 @@
 
-package dtu.ws.fastmoney;
+package fastmoney;
 
 import jakarta.xml.ws.WebFault;
 

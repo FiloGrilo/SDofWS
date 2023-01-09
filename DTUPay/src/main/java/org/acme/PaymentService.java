@@ -13,6 +13,7 @@ public class PaymentService {
     BankService service = (new BankServiceService()).getBankServicePort();
 
     private List<Payment> paymentList = new ArrayList<>();
+    private List<String> idList= new ArrayList<>();
 
     private Payment payment= new Payment("cid1","mid1",new BigDecimal(100));
 
@@ -30,6 +31,7 @@ public class PaymentService {
     public Response registerUser(CreateUser data) {
         try {
             var id = service.createAccountWithBalance(data.user, data.balance);
+            idList.add(id);
             return Response.ok(id).build();
         } catch (BankServiceException_Exception e) {
             System.err.println("Got error: " + e.getMessage());

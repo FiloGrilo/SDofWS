@@ -33,7 +33,6 @@ public class PaymentResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getBalanceJson(@PathParam String id) { return pService.getBalance(id); }
 
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public boolean postPaymentJSON(Payment p) {

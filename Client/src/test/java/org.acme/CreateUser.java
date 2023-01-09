@@ -1,6 +1,6 @@
 package org.acme;
 
-import dtu.ws.fastmoney.User;
+import fastmoney.User;
 
 import java.math.BigDecimal;
 

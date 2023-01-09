@@ -9,6 +9,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import org.acme.*;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class PaymentService {
@@ -19,7 +20,7 @@ public class PaymentService {
         baseUrl = client.target("http://localhost:8080/");
     }
 
-    public Response getPaymentListJson() {
+    public List<Payment> getPaymentListJson() {
         return getPaymentList(MediaType.APPLICATION_JSON);
     }
 
@@ -30,7 +31,7 @@ public class PaymentService {
     public Response registerUserJson(CreateUser data) {
         return registerUser(data,MediaType.APPLICATION_JSON);
     }
-    public Response getBalanceJson(String id) {
+    public BigDecimal getBalanceJson(String id) {
         return getBalance(id,MediaType.APPLICATION_JSON);
     }
     public void transferMoneyJson(Transfer data) {
@@ -40,8 +41,8 @@ public class PaymentService {
         deleteAccount(id,MediaType.APPLICATION_JSON);
     }
 
-    private Response getPaymentList(String mediaType) {
-        return baseUrl.path("payments")
+    private List<Payment> getPaymentList(String mediaType) {
+        return (List<Payment>) baseUrl.path("payment")
                 .request()
                 .accept(mediaType)
                 .get();
@@ -57,11 +58,11 @@ public class PaymentService {
                 .request()
                 .put(Entity.entity(data, mediaType));
     }
-    private Response getBalance(String id,String mediaType) {
+    private BigDecimal getBalance(String id,String mediaType) {
         return baseUrl.path("payments/getBalance/{id}")
                 .request()
                 .accept(mediaType)
-                .get();
+                .get(BigDecimal.class);
     }
     private Response transfer(Transfer data,String mediaType){
         return  baseUrl.path("payments/transfer")

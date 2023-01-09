@@ -1,14 +1,11 @@
 
-package dtu.ws.fastmoney;
+package fastmoney;
 
+import jakarta.xml.ws.*;
+
+import javax.xml.namespace.QName;
 import java.net.MalformedURLException;
 import java.net.URL;
-import javax.xml.namespace.QName;
-import jakarta.xml.ws.Service;
-import jakarta.xml.ws.WebEndpoint;
-import jakarta.xml.ws.WebServiceClient;
-import jakarta.xml.ws.WebServiceException;
-import jakarta.xml.ws.WebServiceFeature;
 
 
 /**
@@ -63,12 +60,10 @@ public class BankServiceService
     }
 
     /**
-     * 
-     * @return
-     *     returns BankService
+     * @return returns BankService
      */
     @WebEndpoint(name = "BankServicePort")
-    public BankService getBankServicePort() {
+    public dtu.ws.fastmoney.BankService getBankServicePort() {
         return super.getPort(new QName("http://fastmoney.ws.dtu/", "BankServicePort"), BankService.class);
     }
 
