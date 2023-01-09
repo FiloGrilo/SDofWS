@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ws.rs.core.Response;
-import org.jboss.resteasy.annotations.jaxrs.PathParam;
+import javax.ws.rs.PathParam;
 
 import dtu.ws.fastmoney.*;
 
@@ -39,7 +39,7 @@ public class PaymentService {
             return Response.status(Response.Status.PRECONDITION_FAILED).entity(e.getCause()).build();
         }
     }
-    public Response getBalance(@PathParam String id) {
+    public Response getBalance(String id) {
         try {
             var user = service.getAccount(id);
             if (user == null) {
@@ -52,7 +52,7 @@ public class PaymentService {
     }
         public Response transferMoney(Transfer data) {
             try {
-                service.transferMoneyFromTo(data.from, data.to, data.amount, data.description);
+                service.transferMoneyFromTo(data.to, data.from, data.amount, data.description);
                 return Response.ok().build();
             } catch (BankServiceException_Exception e) {
                 return Response.status(Response.Status.PRECONDITION_FAILED).entity(e.getCause()).build();

@@ -7,10 +7,11 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
-import org.jboss.resteasy.annotations.jaxrs.PathParam;
+
 
 @Path("/payments")
 public class PaymentResource {
@@ -31,7 +32,7 @@ public class PaymentResource {
     @GET
     @Path("/getBalance/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getBalanceJson(@PathParam String id) { return pService.getBalance(id); }
+    public Response getBalanceJson(@PathParam("id") String id) { return pService.getBalance(id); }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <datasource-mapping />
+        <naming-strategy-map />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -7,7 +16,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-resteasy-jaxb:2.15.2.Final" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-jaxb:2.15.2.Final" level="project" />
@@ -60,7 +69,7 @@
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-netty:2.15.2.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.86.Final" level="project" />
     <orderEntry type="library" name="Maven: com.aayushatharva.brotli4j:brotli4j:1.8.0" level="project" />
-    <orderEntry type="library" name="Maven: com.aayushatharva.brotli4j:native-osx-x86_64:1.8.0" level="project" />
+    <orderEntry type="library" name="Maven: com.aayushatharva.brotli4j:native-windows-x86_64:1.8.0" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec-haproxy:4.1.86.Final" level="project" />
     <orderEntry type="library" name="Maven: io.smallrye.common:smallrye-common-annotation:1.13.2" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-vertx-latebound-mdc-provider:2.15.2.Final" level="project" />
