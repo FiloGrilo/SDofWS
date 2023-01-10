@@ -52,7 +52,9 @@ public class PaymentService {
     }
         public Response transferMoney(Transfer data) {
             try {
-                service.transferMoneyFromTo(data.to, data.from, data.amount, data.description);
+                System.out.println("TRANSFERING MONEY");
+                service.transferMoneyFromTo(data.from, data.to, data.amount, data.description);
+                System.out.println("TRANSFERING MONEY");
                 return Response.ok().build();
             } catch (BankServiceException_Exception e) {
                 return Response.status(Response.Status.PRECONDITION_FAILED).entity(e.getCause()).build();
